@@ -1,26 +1,36 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <title>OkBid</title>
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+    <link rel="stylesheet" href="{{asset('css/owl.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/magnific-popup.css')}}">
+    <link rel="stylesheet" href="{{asset('css/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('css/jquery-ui.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="shortcut icon" href="{{asset('images/favicon.png')}}" type="image/x-icon">
 </head>
 <body>
-    <div id="app">
+    <!--============= ScrollToTop Section Starts Here =============-->
+    <div class="overlayer" id="overlayer">
+        <div class="loader">
+            <div class="loader-inner"></div>
+        </div>
+    </div>
+    <a href="#0" class="scrollToTop"><i class="fas fa-angle-up"></i></a>
+    <div class="overlay"></div>
+    <!--============= ScrollToTop Section Ends Here =============-->
+    @yield('content')
+    {{-- <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
@@ -45,7 +55,7 @@
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
                                 </li>
                             @endif
-                            
+
                             @if (Route::has('register'))
                                 <li class="nav-item">
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
@@ -78,6 +88,21 @@
         <main class="py-4">
             @yield('content')
         </main>
-    </div>
+    </div> --}}
+
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
+    <script src="{{asset('js/modernizr-3.6.0.min.js')}}"></script>
+    <script src="{{asset('js/plugins.js')}}"></script>
+    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+    <script src="{{asset('js/isotope.pkgd.min.js')}}"></script>
+    <script src="{{asset('js/wow.min.js')}}"></script>
+    <script src="{{asset('js/waypoints.js')}}"></script>
+    <script src="{{asset('js/nice-select.js')}}"></script>
+    <script src="{{asset('js/counterup.min.js')}}"></script>
+    <script src="{{asset('js/owl.min.js')}}"></script>
+    <script src="{{asset('js/magnific-popup.min.js')}}"></script>
+    <script src="{{asset('js/yscountdown.min.js')}}"></script>
+    <script src="{{asset('js/jquery-ui.min.js')}}"></script>
+    <script src="{{asset('js/main.js')}}"></script>
 </body>
 </html>
