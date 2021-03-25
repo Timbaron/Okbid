@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/products', [ProductController::class, 'index'])->name('products');
+Route::middleware('auth')->group(function () {
+
+    Route::post('PlaceBid', [ProductController::class, 'bid']);
+});
 
 Auth::routes();
 

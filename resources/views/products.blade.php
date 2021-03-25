@@ -79,7 +79,7 @@
                                                 @endif
                                             </div>
                                         </div>
-                                        <span class="total-bids">30 Bids</span>
+                                        <span class="total-bids">{{$product->bid_count}} Bid(s)</span>
                                     </div>
                                     <div class="text-center">
                                         <input type="text" id="product_id" value="{{$product->id}}" hidden>

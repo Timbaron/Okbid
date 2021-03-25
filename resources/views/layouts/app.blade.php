@@ -241,18 +241,19 @@
           <!-- Modal content-->
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal">&times;</button>
-              <h4 class="modal-title">Modal Header</h4>
+              {{-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+              <h6 class="modal-title">Modal Header</h6>
             </div>
             <div class="modal-body">
-              <form action="#" id="makeBidForm">
-                  test
+              <form action="/PlaceBid" id="makeBidForm" method="POST">
+                @csrf
+                    <input type="number" placeholder="Place your bid in USD" name="bid_amount">
+                    <input type="text" id="pro_id" name="product_id" hidden>
+                    <div class="modal-footer">
+                      <button type="submit">Bid Now</button>
+                      {{-- <a href="#" type="button" id="pro_id" class="btn btn-default">Place Bid</a> --}}
+                    </div>
               </form>
-            </div>
-            <input type="text" id="pro_id">
-            <div class="modal-footer">
-              {{-- <button type="button" data-dismiss="modal">Place Bid</button> --}}
-              <a href="#" type="button" id="pro_id" class="btn btn-default">Place Bid</a>
             </div>
           </div>
 
