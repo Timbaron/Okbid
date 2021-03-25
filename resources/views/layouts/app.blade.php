@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
     <title>OkBid</title>
 
@@ -234,7 +235,29 @@
     <!--============= Cart Section Ends Here =============-->
     <!-- Modal -->
 
-    
+    <div id="MakeBid" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">Modal Header</h4>
+            </div>
+            <div class="modal-body">
+              <form action="#" id="makeBidForm">
+                  test
+              </form>
+            </div>
+            <input type="text" id="pro_id">
+            <div class="modal-footer">
+              {{-- <button type="button" data-dismiss="modal">Place Bid</button> --}}
+              <a href="#" type="button" id="pro_id" class="btn btn-default">Place Bid</a>
+            </div>
+          </div>
+
+        </div>
+    </div>
 
   </div>
     <!--============= ScrollToTop Section Ends Here =============-->
@@ -299,7 +322,6 @@
         </main>
     </div> --}}
 
-    <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
     <script src="{{asset('js/modernizr-3.6.0.min.js')}}"></script>
     <script src="{{asset('js/plugins.js')}}"></script>
     <script src="{{asset('js/bootstrap.min.js')}}"></script>

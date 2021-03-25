@@ -72,23 +72,29 @@
                                     <div class="countdown-area">
                                         <div class="countdown">
                                             <div>
-                                                {{$interval->days}} day(s) Left
+                                                @if ($interval->days <= 1)
+                                                    {{$interval->h}} Hour(s) Left
+                                                @else
+                                                    {{$interval->days}} day(s) Left
+                                                @endif
                                             </div>
                                         </div>
                                         <span class="total-bids">30 Bids</span>
                                     </div>
                                     <div class="text-center">
-                                        <button class="custom-button" id="makebid" data-toggle="modal" data-target="#myModal" data-id="<?php echo $product->id ?>" value="<?php echo $product->id ?>"> Submit A Bid</button>
+                                        <input type="text" id="product_id" value="{{$product->id}}" hidden>
+                                        <button class="custom-button" id="makebid{{$product->id}}"> Submit A Bid</button>
                                         {{-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button> --}}
                                     </div>
                                     <script type="text/javascript">
                                         $(document).ready(function(){
-                                            $('#makebid').click(event.preventDefault(); function(){
-                                                var product_id = $(this).attr('data-id');
-                                                alert($product_id);
+                                            $(document).on('click', '#makebid{{$product->id}}', function(){
+                                                var product_id  = {{$product->id}};
+                                                $('#MakeBid').modal('show');
+                                                $('#pro_id').val(product_id);
+                                                $('#makeBidForm').action = "/home";
                                             })
-                                        });
-                                
+                                        })
                                     </script>
                                 </div>
                             </div>
