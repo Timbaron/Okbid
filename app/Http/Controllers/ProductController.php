@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::withCount('bid')->get();
+        $products = Product::withCount('bid')->with('highestBidder')->get();
         return view('products',compact('products'));
     }
     public function bid(Request $request)

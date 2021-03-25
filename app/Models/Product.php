@@ -18,4 +18,8 @@ class Product extends Model
     {
         return $this->hasMany(Bid::class);
     }
+    public function highestBidder()
+    {
+        return $this->hasOne(Bid::class)->orderBy('bid_amount', 'DESC');
+    }
 }

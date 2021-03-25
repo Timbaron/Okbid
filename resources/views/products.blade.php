@@ -65,7 +65,7 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current">Highest Bid</div>
-                                                <div class="amount">${{$product->Starting_price + 100}}.00</div>
+                                                <div class="amount">${{$product->highestBidder['bid_amount']}}.00</div>
                                             </div>
                                         </div>
                                     </div>
@@ -74,6 +74,8 @@
                                             <div>
                                                 @if ($interval->days <= 1)
                                                     {{$interval->h}} Hour(s) Left
+                                                @elseif ($interval->h < 1)
+                                                    {{$interval->m}} Minute(s) Left
                                                 @else
                                                     {{$interval->days}} day(s) Left
                                                 @endif

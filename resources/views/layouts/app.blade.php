@@ -78,7 +78,7 @@
                                 <a href="#">Dashboard</a>
                             </li>
                         @endauth
-                        <li>
+                        {{-- <li>
                             <a href="#0">Pages</a>
                             <ul class="submenu">
                                 <li>
@@ -142,7 +142,7 @@
                                     <a href="error.html">404 Error</a>
                                 </li>
                             </ul>
-                        </li>
+                        </li> --}}
                         <li>
                             <a href="contact.html">Contact</a>
                         </li>
@@ -242,12 +242,12 @@
           <div class="modal-content">
             <div class="modal-header">
               {{-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
-              <h6 class="modal-title">Modal Header</h6>
+              <h6 class="modal-title">Submit Your Bid</h6>
             </div>
             <div class="modal-body">
               <form action="/PlaceBid" id="makeBidForm" method="POST">
                 @csrf
-                    <input type="number" placeholder="Place your bid in USD" name="bid_amount">
+                    <input type="number" placeholder="Place your bid in USD" name="bid_amount" required>
                     <input type="text" id="pro_id" name="product_id" hidden>
                     <div class="modal-footer">
                       <button type="submit">Bid Now</button>

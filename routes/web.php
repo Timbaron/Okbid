@@ -19,7 +19,6 @@ Route::get('/', function () {
 });
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::middleware('auth')->group(function () {
-
     Route::post('PlaceBid', [ProductController::class, 'bid']);
 });
 
