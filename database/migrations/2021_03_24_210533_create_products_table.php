@@ -21,6 +21,8 @@ class CreateProductsTable extends Migration
             $table->string('condition');
             $table->string('ending_date');
             $table->string('Starting_price');
+            $table->unsignedBigInteger('winner')->nullable();
+            $table->foreign('winner')->references('id')->on('users');
             $table->timestamps();
         });
     }

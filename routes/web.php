@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Dashboard;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,6 +21,7 @@ Route::get('/', function () {
 });
 Route::get('/products', [ProductController::class, 'index'])->name('products');
 Route::middleware('auth')->group(function () {
+    Route::get('dashboard',[DashboardController::class, 'index'])->name('dashboard.index');
     Route::post('PlaceBid', [ProductController::class, 'bid']);
 });
 

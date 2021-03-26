@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Storage;
 
@@ -23,14 +24,16 @@ class ProductFactory extends Factory
     public function definition()
     {
         $condition = ['New','Used'];
+        $users = User::pluck('id')->toArray();
         return [
             'name' => $this->faker->name,
             // 'image' => $this->faker->image(Storage::makeDirectory('ProductImages')),
             // 'image' => $this->faker->image('ProductImages',640,480, null, false),
             'description' => $this->faker->sentence(200),
-            'condition' => $this->faker->randomKey($condition),
+            'condition' => $this->faker->randomElement($condition),
             'ending_date' => $this->faker->dateTimeBetween(now(),'+1 week'),
             'starting_price' => $this->faker->numberBetween(100,999),
+            'winner' => $this->faker->randomElement($users),
         ];
     }
 }

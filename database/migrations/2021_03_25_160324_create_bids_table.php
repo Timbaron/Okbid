@@ -19,7 +19,7 @@ class CreateBidsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id')->references('id')->on('users');
-            $table->string('bid_amount');
+            $table->bigInteger('bid_amount');
             $table->timestamps();
         });
     }

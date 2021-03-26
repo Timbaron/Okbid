@@ -17,6 +17,7 @@
     </div>
     <!--============= Hero Section Ends Here =============-->
 
+    @if (count($products) >= 1)
 
     <!--============= Featured Auction Section Starts Here =============-->
     <section class="featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel">
@@ -125,6 +126,14 @@
         </div>
     </section>
     <!--============= Featured Auction Section Ends Here =============-->
+
+    @else
+    <section class="featured-auction-section padding-bottom mt--240 mt-lg--440 pos-rel">
+        <div class="container">
+            <h3 style="color: white">No Product Available</h3>
+        </div>
+    </section>
+    @endif
 
 
     <!--============= Product Auction Section Starts Here =============-->
