@@ -50,7 +50,6 @@
                         <li>
                             @auth
                                 <a href="#" class="user-button"><i class="flaticon-user"></i></a>
-                            @else
                                 <a href="{{route('login')}}" class="user-button"><i class="flaticon-user"></i></a>
                             @endauth
                         </li>
@@ -78,71 +77,6 @@
                                 <a href="/dashboard">Dashboard</a>
                             </li>
                         @endauth
-                        {{-- <li>
-                            <a href="#0">Pages</a>
-                            <ul class="submenu">
-                                <li>
-                                    <a href="#0">Product</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="product.html">Product Page 1</a>
-                                        </li>
-                                        <li>
-                                            <a href="product-2.html">Product Page 2</a>
-                                        </li>
-                                        <li>
-                                            <a href="product-details.html">Product Details</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">My Account</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="sign-up.html">Sign Up</a>
-                                        </li>
-                                        <li>
-                                            <a href="sign-in.html">Sign In</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#0">Dashboard</a>
-                                    <ul class="submenu">
-                                        <li>
-                                            <a href="dashboard.html">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="profile.html">Personal Profile</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-bid.html">My Bids</a>
-                                        </li>
-                                        <li>
-                                            <a href="winning-bids.html">Winning Bids</a>
-                                        </li>
-                                        <li>
-                                            <a href="notifications.html">My Alert</a>
-                                        </li>
-                                        <li>
-                                            <a href="my-favorites.html">My Favorites</a>
-                                        </li>
-                                        <li>
-                                            <a href="referral.html">Referrals</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="about.html">About Us</a>
-                                </li>
-                                <li>
-                                    <a href="faqs.html">Faqs</a>
-                                </li>
-                                <li>
-                                    <a href="error.html">404 Error</a>
-                                </li>
-                            </ul>
-                        </li> --}}
                         <li>
                             <a href="contact.html">Contact</a>
                         </li>
@@ -166,6 +100,7 @@
     <!--============= Header Section Ends Here =============-->
 
      <!--============= Cart Section Starts Here =============-->
+     @auth
      <div class="cart-sidebar-area">
         <div class="top-content">
             <a href="/" class="logo">
@@ -232,8 +167,9 @@
             </div>
         </div>
     </div>
+     @endauth
     <!--============= Cart Section Ends Here =============-->
-    <!-- Modal -->
+    <!-- Bid Modal -->
 
     <div id="MakeBid" class="modal fade" role="dialog">
         <div class="modal-dialog">
@@ -249,6 +185,35 @@
                 @csrf
                     <input type="number" placeholder="Place your bid in USD" name="bid_amount" required>
                     <input type="text" id="pro_id" name="product_id" hidden>
+                    <div class="modal-footer">
+                      <button type="submit">Bid Now</button>
+                      {{-- <a href="#" type="button" id="pro_id" class="btn btn-default">Place Bid</a> --}}
+                    </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+    </div>
+
+    {{-- Edit User detail --}}
+    <div id="user" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              {{-- <button type="button" class="close" data-dismiss="modal">&times;</button> --}}
+              <h6 class="modal-title">Submit Your Bid</h6>
+            </div>
+            <div class="modal-body">
+              <form action="/edit" id="makeBidForm" method="POST">
+                @csrf
+                    <input type="text" placeholder="Enter your Full name" name="name" required>
+                    <input type="date" placeholder="Date of birth" name="date_of_birth" required>
+                    <input type="text" placeholder="Enter your Full name" name="name" required>
+                    <input type="text" placeholder="Enter your Full name" name="name" required>
+                    {{-- <input type="text" id="pro_id" name="product_id" hidden> --}}
                     <div class="modal-footer">
                       <button type="submit">Bid Now</button>
                       {{-- <a href="#" type="button" id="pro_id" class="btn btn-default">Place Bid</a> --}}

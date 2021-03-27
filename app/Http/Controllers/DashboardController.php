@@ -20,4 +20,9 @@ class DashboardController extends Controller
         $bidswon = Product::where('winner',Auth::id())->get();
         return view('Dashboard', compact('user','totalbids','bidswon'));
     }
+    public function profile()
+    {
+        $user = Auth::user();
+        return view('profile', compact('user'));
+    }
 }
