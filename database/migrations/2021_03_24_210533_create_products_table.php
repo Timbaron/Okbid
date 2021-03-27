@@ -20,7 +20,7 @@ class CreateProductsTable extends Migration
             $table->longText('description');
             $table->string('condition');
             $table->string('ending_date');
-            $table->string('Starting_price');
+            $table->string('starting_price');
             $table->unsignedBigInteger('winner')->nullable();
             $table->foreign('winner')->references('id')->on('users');
             $table->timestamps();
