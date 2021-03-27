@@ -66,7 +66,7 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current">Highest Bid</div>
-                                                <div class="amount">${{$product->highestBidder['bid_amount']}}.00</div>
+                                                <div class="amount">${{$product->highestBidder['bid_amount'] ?? 0}}.00</div>
                                             </div>
                                         </div>
                                     </div>

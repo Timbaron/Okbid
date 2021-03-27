@@ -14,8 +14,10 @@ class DashboardController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $totalbids = count(DB::select('select * from bids where user_id = ?', [Auth::id()]));
-        $bidswon = count(DB::select('select * from products where winner = ?', [Auth::id()]));
+        $totalbids = Bid::where('user_id',Auth::id())->with('Product')->get();
+
+        // return $totalbids;
+        $bidswon = Product::where('winner',Auth::id())->get();
         return view('Dashboard', compact('user','totalbids','bidswon'));
     }
 }

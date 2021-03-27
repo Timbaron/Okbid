@@ -11,4 +11,13 @@ class Bid extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+    public function Product()
+    {
+        return $this->belongsTo(Product::class)->orderBy('created_at','DESC');
+    }
+    public function highestBidder()
+    {
+        return $this->hasOne(Bid::class)->orderBy('bid_amount','DESC');
+    }
 }
