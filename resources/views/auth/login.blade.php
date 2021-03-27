@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+{{-- <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -69,5 +69,82 @@
             </div>
         </div>
     </div>
+</div> --}}
+ <!--============= Hero Section Starts Here =============-->
+ <div class="hero-section">
+    <div class="container">
+        <ul class="breadcrumb">
+            <li>
+                <a href="index-2.html">Home</a>
+            </li>
+            <li>
+                <span>Sign In</span>
+            </li>
+        </ul>
+    </div>
+    <div class="bg_img hero-bg bottom_center" data-background="{{asset('images/banner/hero-bg.png')}}"></div>
 </div>
+<!--============= Hero Section Ends Here =============-->
+
+
+<!--============= Account Section Starts Here =============-->
+<section class="account-section padding-bottom">
+    <div class="container">
+        <div class="account-wrapper mt--100 mt-lg--440">
+            <div class="left-side">
+                <div class="section-header">
+                    <h2 class="title">HI, THERE</h2>
+                    <p>You can log in to your OKBid account here.</p>
+                </div>
+                <ul class="login-with">
+                    <li>
+                        <a href="#0"><i class="fab fa-facebook"></i>Log in with Facebook</a>
+                    </li>
+                    <li>
+                        <a href="#0"><i class="fab fa-google-plus"></i>Log in with Google</a>
+                    </li>
+                </ul>
+                <div class="or">
+                    <span>Or</span>
+                </div>
+                <form class="login-form" action="{{route('login')}}" method="POST">
+                    @csrf
+                    <div class="form-group mb-30">
+                        <label for="login-email"><i class="far fa-envelope"></i></label>
+                        <input type="text" id="login-email" name="email" value="{{old('email')}}" placeholder="Email Address" class="@error('email') is-invalid @enderror" required>
+                        @error('email')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+                    <div class="form-group">
+                        <label for="login-pass"><i class="fas fa-lock"></i></label>
+                        <input type="password" name="password" id="login-pass" placeholder="Password" class="@error('password') is-invalid @enderror">
+                        @error('password')
+                            <span class="invalid-feedback" role="alert">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                        <span class="pass-type"><i class="fas fa-eye"></i></span>
+                    </div>
+                    <div class="form-group">
+                        <a href="#0">Forgot Password?</a>
+                    </div>
+                    <div class="form-group mb-0">
+                        <button type="submit" class="custom-button">LOG IN</button>
+                    </div>
+                </form>
+            </div>
+            <div class="right-side cl-white">
+                <div class="section-header mb-0">
+                    <h3 class="title mt-0">NEW HERE?</h3>
+                    <p>Sign up and create your Account</p>
+                    <a href="{{route('register')}}" class="custom-button transparent">Sign Up</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--============= Account Section Ends Here =============-->
 @endsection

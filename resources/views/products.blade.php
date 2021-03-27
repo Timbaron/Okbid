@@ -57,7 +57,7 @@
                                             </div>
                                             <div class="amount-content">
                                                 <div class="current">Starting Price</div>
-                                                <div class="amount">${{$product->Starting_price}}.00</div>
+                                                <div class="amount">${{$product->starting_price}}.00</div>
                                             </div>
                                         </div>
                                         <div class="bid-amount">

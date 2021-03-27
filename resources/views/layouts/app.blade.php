@@ -49,7 +49,6 @@
                         </li>
                         <li>
                             @auth
-                                <a href="#" class="user-button"><i class="flaticon-user"></i></a>
                                 <a href="{{route('login')}}" class="user-button"><i class="flaticon-user"></i></a>
                             @endauth
                         </li>
@@ -72,14 +71,61 @@
                         <li>
                             <a href="{{route('products')}}">Products</a>
                         </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a href="">My Account</a>
+                            <ul class="submenu">
+                                @auth
+                                    <li>
+                                        <a href="{{route('dashboard.index')}}">Dashboard</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('profile')}}">Personal Profile</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">My Bids</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Winning Bids</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">My Alert</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">My Favorites</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Referrals</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                                        document.getElementById('logout-form').submit();">
+                                        Logout</a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                            @csrf
+                                        </form>
+                                    </li>
+                                @else
+                                <li>
+                                    <a href="{{route('login')}}">Login</a>
+                                </li>
+                                <li>
+                                    <a href="{{route('register')}}">Register</a>
+                                </li>
+                                @endauth
+                            </ul>
+                        </li>
                         @auth
                             <li>
                                 <a href="/dashboard">Dashboard</a>
                             </li>
+                        @else
+                            <li>
+                                <a href="{{route('login')}}">Login</a>
+                            </li>
                         @endauth
-                        <li>
-                            <a href="#">Contact</a>
-                        </li>
                     </ul>
                     <form class="search-form">
                         <input type="text" placeholder="Search for brand, model....">
