@@ -78,7 +78,7 @@
                             </li>
                         @endauth
                         <li>
-                            <a href="contact.html">Contact</a>
+                            <a href="#">Contact</a>
                         </li>
                     </ul>
                     <form class="search-form">
