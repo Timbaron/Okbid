@@ -60,7 +60,7 @@
             <div class="container">
                 <div class="header-wrapper">
                     <div class="logo">
-                        <a href="index-2.html">
+                        <a href="/">
                             <img src="{{asset('images/logo/logo.png')}}" alt="logo">
                         </a>
                     </div>
