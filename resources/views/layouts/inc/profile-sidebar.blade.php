@@ -24,19 +24,22 @@
                 <a href="{{route('profile')}}"><i class="flaticon-settings"></i>Personal Profile </a>
             </li>
             <li>
-                <a href="my-bid.html"><i class="flaticon-auction"></i>My Bids</a>
+                <a href="{{route('sell')}}"><i class="flaticon-auction"></i>Sell Product</a>
             </li>
             <li>
-                <a href="winning-bids.html"><i class="flaticon-best-seller"></i>Winning Bids</a>
+                <a href=""><i class="flaticon-auction"></i>My Bids</a>
             </li>
             <li>
-                <a href="notifications.html"><i class="flaticon-alarm"></i>My Alerts</a>
+                <a href=""><i class="flaticon-best-seller"></i>Winning Bids</a>
             </li>
             <li>
-                <a href="my-favorites.html"><i class="flaticon-star"></i>My Favorites</a>
+                <a href=""><i class="flaticon-alarm"></i>My Alerts</a>
             </li>
             <li>
-                <a href="referral.html"><i class="flaticon-shake-hand"></i>Referrals</a>
+                <a href=""><i class="flaticon-star"></i>My Favorites</a>
+            </li>
+            <li>
+                <a href=""><i class="flaticon-shake-hand"></i>Referrals</a>
             </li>
         </ul>
     </div>

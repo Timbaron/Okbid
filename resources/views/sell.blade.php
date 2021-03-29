@@ -31,24 +31,44 @@
                                     <li>
                                         <div class="info-name">Product Name</div>
                                         <div class="info-value">
-                                            <input type="text" name="name" placeholder="E.g Toyota Camry" autofocus required>
+                                            <input type="text" name="name" placeholder="E.g Toyota Camry" autofocus required value="{{old('name')}}">
+                                            @error('name')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info-name">Product Display Image</div>
                                         <div class="info-value">
-                                            <input type="file" name="display_image"  required>
+                                            @error('display_image')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            <input type="file" name="display_image" required>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info-name">Other Images</div>
                                         <div class="info-value">
-                                            <input type="file" name="other_images"  multiple required>
+                                            @error('other_images[]')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            <input type="file" name="other_images[]"  multiple="true" required>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info-name">Condition</div>
                                         <div class="info-value">
+                                            @error('condition')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
                                             <select name="condition" required>
                                                 <option value="" active>Select Condition</option>
                                                 <option value="New" active>Brand New</option>
@@ -57,21 +77,36 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="info-name">Ending Date</div>
+                                        <div class="info-name">Bidding Ending Date</div>
                                         <div class="info-value">
-                                            <input type="date" name="ending_date"  required>
+                                            @error('ending_date')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            <input type="date" name="ending_date" value="{{old('ending_date')}}" required>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info-name">Starting Price<br>(Naira)</div>
                                         <div class="info-value">
-                                            <input type="number" name="starting_price" placeholder="E.g 2000" required>
+                                            @error('starting_price')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            <input type="number" name="starting_price" value="{{old('starting_price')}}" placeholder="E.g 2000" required>
                                         </div>
                                     </li>
                                     <li>
                                         <div class="info-name">Product Description</div>
                                         <div class="info-value">
-                                            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+                                            @error('description')
+                                                <div>
+                                                    <span style="color:red;">{{$message}}</span>
+                                                </div>
+                                            @enderror
+                                            <textarea name="description" id="description" cols="30" rows="10">{{old('description')}}</textarea>
                                         </div>
                                     </li>
                                 </ul>
