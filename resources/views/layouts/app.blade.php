@@ -7,7 +7,7 @@
     <script src="{{asset('js/jquery-3.3.1.min.js')}}"></script>
 
     <title>OkBid</title>
-
+    <x:notify-messages />
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/animate.css')}}">
