@@ -53,7 +53,7 @@
                                     <img src="{{asset('images/dashboard/03.png')}}" alt="dashboard">
                                 </div>
                                 <div class="content">
-                                    <h2 class="title"><span class="counter">115</span></h2>
+                                    <h2 class="title"><span class="counter">20</span></h2>
                                     <h6 class="info">Favorites</h6>
                                 </div>
                             </div>

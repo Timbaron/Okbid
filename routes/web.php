@@ -24,6 +24,8 @@ Route::middleware('auth')->group(function () {
     Route::get('dashboard',[DashboardController::class, 'index'])->name('dashboard.index');
     Route::post('PlaceBid', [ProductController::class, 'bid']);
     Route::get('profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::get('/sell', [ProductController::class, 'sell'])->name('sell');
+    Route::post('/sell', [ProductController::class, 'store']);
 });
 
 Auth::routes();

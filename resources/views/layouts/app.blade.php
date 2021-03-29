@@ -119,7 +119,7 @@
                         </li>
                         @auth
                             <li>
-                                <a href="/dashboard">Dashboard</a>
+                                <a href="/sell">Sell Product</a>
                             </li>
                         @else
                             <li>
@@ -347,5 +347,10 @@
     <script src="{{asset('js/yscountdown.min.js')}}"></script>
     <script src="{{asset('js/jquery-ui.min.js')}}"></script>
     <script src="{{asset('js/main.js')}}"></script>
+    <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
+    {{-- <script src="cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> --}}
+    <script>
+       CKEDITOR.replace('description');
+    </script>
 </body>
 </html>

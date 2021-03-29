@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
 use App\Models\Bid;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProductController extends Controller
 {
@@ -23,5 +25,11 @@ class ProductController extends Controller
         ]);
         return redirect()->back();
     }
+    public function sell()
+    {
+        $user = Auth::user();
+        return view('sell', compact('user'));
+    }
     
+
 }
