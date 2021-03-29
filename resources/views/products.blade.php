@@ -40,8 +40,8 @@
                         <div class="col-sm-10 col-md-6 col-lg-4">
                             <div class="auction-item-2">
                                 <div class="auction-thumb">
-                                    @if ($product->image)
-                                        <a href="#"><img src="assets/images/auction/car/auction-1.jpg" alt="car"></a>
+                                    @if ($product->display_image)
+                                        <a href="#"><img src="{{asset('storage/display_images/'.$product->display_image)}}" alt="Image Not Found"></a>
                                     @endif
                                     <a href="#0" class="rating"><i class="far fa-star"></i></a>
                                     <a href="#0" class="bid"><i class="flaticon-auction"></i></a>
